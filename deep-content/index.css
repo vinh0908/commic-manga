@@ -141,4 +141,8 @@ img {
     .comic-image {
         margin-bottom: 10px;
     }
+
+    .thumbnail-img {
+        max-width: 50%;
+    }
 }
