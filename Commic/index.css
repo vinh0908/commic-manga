@@ -265,6 +265,28 @@
     /* Dot được chọn */
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 300px;
+    }
+
+    .slider img {
+        width: 100%;
+        height: auto;
+    }
+
+    .slider-btn {
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-btn {
+        font-size: 16px;
+    }
+}
+
 /* footer */
 .footer {
     text-align: center;
