@@ -1,0 +1,87 @@
+.header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-logo {
+    width: 400px;
+}
+
+.header-slogan {
+    font-size: 18px;
+    font-weight: 700;
+    color: #555;
+    text-align: left;
+}
+
+.row.align-items-center {
+    gap: 10px;
+    /* Khoảng cách giữa logo và slogan */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    /* Khoảng cách giữa logo và slogan */
+}
+
+.name-commic {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+}
+
+/* Tùy chỉnh kích thước hình ảnh nhỏ hơn */
+.thumbnail-img {
+    width: 300px;
+    /* Giới hạn chiều rộng của hình ảnh nhỏ */
+    height: auto;
+    /* Tự động điều chỉnh chiều cao để giữ tỉ lệ */
+}
+
+.info-wrapper {
+    display: flex;
+    /* Kích hoạt Flexbox */
+    align-items: center;
+    /* Căn giữa chữ theo chiều dọc với hình ảnh */
+}
+
+.info-text {
+    flex-grow: 1;
+    /* Đảm bảo phần chữ chiếm tối đa không gian còn lại */
+}
+
+.dropdown-menu {
+    width: 100%;
+    /* Đảm bảo dropdown menu chiếm toàn bộ chiều rộng của cột */
+}
+
+.chapter-content {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    height: 100%;
+    /* Đảm bảo tất cả các div có chiều cao bằng nhau */
+}
+
+.chapter-content-center {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    font-size: 14px;
+    color: #555;
+    border-top: 1px solid #ddd;
+  }
