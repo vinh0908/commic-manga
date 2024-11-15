@@ -1,3 +1,4 @@
+/* CSS gốc */
 .header {
     text-align: center;
     padding: 20px 0;
@@ -5,6 +6,8 @@
 
 .header-logo {
     width: 400px;
+    max-width: 100%; /* Đảm bảo logo không vượt quá kích thước màn hình */
+    height: auto;
 }
 
 .header-slogan {
@@ -16,7 +19,6 @@
 
 .row.align-items-center {
     gap: 10px;
-    /* Khoảng cách giữa logo và slogan */
 }
 
 .header-container {
@@ -24,32 +26,26 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    /* Khoảng cách giữa logo và slogan */
+    flex-wrap: wrap; /* Cho phép wrap khi không đủ chỗ */
 }
 
-/* Tùy chỉnh kích thước hình ảnh nhỏ hơn */
 .thumbnail-img {
     width: 300px;
-    /* Giới hạn chiều rộng của hình ảnh nhỏ */
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước khung chứa */
     height: auto;
-    /* Tự động điều chỉnh chiều cao để giữ tỉ lệ */
 }
 
 .info-wrapper {
     display: flex;
-    /* Kích hoạt Flexbox */
     align-items: center;
-    /* Căn giữa chữ theo chiều dọc với hình ảnh */
 }
 
 .info-text {
     flex-grow: 1;
-    /* Đảm bảo phần chữ chiếm tối đa không gian còn lại */
 }
 
 .dropdown-menu {
     width: 100%;
-    /* Đảm bảo dropdown menu chiếm toàn bộ chiều rộng của cột */
 }
 
 .chapter-content {
@@ -58,7 +54,6 @@
     border: 1px solid #ddd;
     margin-bottom: 10px;
     height: 100%;
-    /* Đảm bảo tất cả các div có chiều cao bằng nhau */
 }
 
 .chapter-content-center {
@@ -66,21 +61,14 @@
     margin-top: 10px;
 }
 
-/* Tùy chỉnh hình ảnh */
 .comic-image {
     width: 100%;
-    /* Hình ảnh chiếm toàn bộ chiều rộng khung chứa */
     height: auto;
-    /* Giữ tỉ lệ hình ảnh */
     margin-bottom: 20px;
-    /* Khoảng cách giữa các hình ảnh */
     border-radius: 8px;
-    /* Bo góc hình ảnh */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Đổ bóng nhẹ cho hình ảnh */
 }
 
-/* Tiêu đề chương */
 .chapter-title {
     text-align: center;
     font-size: 24px;
@@ -90,7 +78,6 @@
     color: #333;
 }
 
-/* Footer */
 .footer {
     text-align: center;
     margin-top: 40px;
@@ -101,12 +88,12 @@
     border-top: 1px solid #ddd;
 }
 
-/* Hiệu ứng hover cho hình ảnh */
 .comic-image:hover {
     transform: scale(1.02);
-    /* Phóng to nhẹ khi hover */
     transition: transform 0.3s ease;
 }
+
+/* Responsive design */
 
 /* Màn hình nhỏ hơn 768px (thiết bị di động) */
 @media (max-width: 768px) {
@@ -138,6 +125,11 @@
     .footer {
         font-size: 12px; /* Giảm kích thước font cho footer */
     }
+
+    /* Tắt hiệu ứng zoom hình ảnh trên thiết bị di động */
+    .comic-image:hover {
+        transform: none;
+    }
 }
 
 /* Màn hình nhỏ hơn 576px (thiết bị di động nhỏ hơn) */
@@ -150,7 +142,8 @@
         font-size: 18px; /* Giảm kích thước tiêu đề chương */
     }
 
-    .comic-image:hover {
-        transform: none; /* Tắt hiệu ứng zoom trên màn hình nhỏ */
+    /* Tối ưu hóa khoảng cách giữa các hình ảnh truyện */
+    .comic-image {
+        margin-bottom: 10px;
     }
 }
