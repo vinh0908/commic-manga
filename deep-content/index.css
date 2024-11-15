@@ -107,3 +107,50 @@
     /* Phóng to nhẹ khi hover */
     transition: transform 0.3s ease;
 }
+
+/* Màn hình nhỏ hơn 768px (thiết bị di động) */
+@media (max-width: 768px) {
+    .header-logo {
+        width: 100%; /* Logo chiếm toàn bộ chiều rộng trên thiết bị nhỏ */
+    }
+
+    .header-slogan {
+        font-size: 16px; /* Giảm kích thước font cho slogan */
+    }
+
+    .header-container {
+        flex-direction: column; /* Xếp các phần tử theo chiều dọc trên thiết bị nhỏ */
+        text-align: center; /* Căn chỉnh văn bản ở giữa */
+    }
+
+    .info-wrapper {
+        flex-direction: column; /* Xếp chữ và hình ảnh theo chiều dọc */
+    }
+
+    .thumbnail-img {
+        width: 100%; /* Hình ảnh chiếm toàn bộ chiều rộng trên thiết bị di động */
+    }
+
+    .chapter-title {
+        font-size: 20px; /* Giảm kích thước tiêu đề chương trên thiết bị nhỏ */
+    }
+
+    .footer {
+        font-size: 12px; /* Giảm kích thước font cho footer */
+    }
+}
+
+/* Màn hình nhỏ hơn 576px (thiết bị di động nhỏ hơn) */
+@media (max-width: 576px) {
+    .header-slogan {
+        font-size: 14px; /* Giảm kích thước font cho slogan */
+    }
+
+    .chapter-title {
+        font-size: 18px; /* Giảm kích thước tiêu đề chương */
+    }
+
+    .comic-image:hover {
+        transform: none; /* Tắt hiệu ứng zoom trên màn hình nhỏ */
+    }
+}
