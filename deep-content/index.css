@@ -1,64 +1,79 @@
-/* CSS gốc */
+/*------------------------------------
+    Global Styles
+------------------------------------*/
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*------------------------------------
+    Header
+------------------------------------*/
 .header {
     text-align: center;
     padding: 20px 0;
 }
 
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 .header-logo {
-    width: 400px;
-    max-width: 100%; /* Đảm bảo logo không vượt quá kích thước màn hình */
-    height: auto;
+    max-width: 400px;
 }
 
 .header-slogan {
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px equivalent */
     font-weight: 700;
     color: #555;
     text-align: left;
 }
 
-.row.align-items-center {
-    gap: 10px;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Cho phép wrap khi không đủ chỗ */
-}
-
-.thumbnail-img {
-    width: 300px;
-    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước khung chứa */
-    height: auto;
-}
-
+/*------------------------------------
+    Comic Info Section
+------------------------------------*/
 .info-wrapper {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.thumbnail-img {
+    max-width: 300px;
+    border-radius: 8px;
 }
 
 .info-text {
-    flex-grow: 1;
+    flex: 1 1 50%; /* Allows flexibility and wrapping */
 }
 
-.dropdown-menu {
-    width: 100%;
-}
-
+/*------------------------------------
+    Chapter Content
+------------------------------------*/
 .chapter-content {
     padding: 10px;
     background-color: #f8f9fa;
     border: 1px solid #ddd;
     margin-bottom: 10px;
-    height: 100%;
 }
 
-.chapter-content-center {
+.chapter-title {
     text-align: center;
-    margin-top: 10px;
+    font-size: 1.5rem; /* 24px equivalent */
+    font-weight: bold;
+    margin: 20px 0 40px;
+    color: #333;
 }
 
 .comic-image {
@@ -67,82 +82,62 @@
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-.chapter-title {
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    color: #333;
+.comic-image:hover {
+    transform: scale(1.02);
 }
 
+/*------------------------------------
+    Footer
+------------------------------------*/
 .footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
     background-color: #f8f9fa;
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px equivalent */
     color: #555;
     border-top: 1px solid #ddd;
 }
 
-.comic-image:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
-}
-
-/* Responsive design */
-
-/* Màn hình nhỏ hơn 768px (thiết bị di động) */
+/*------------------------------------
+    Responsive Design
+------------------------------------*/
 @media (max-width: 768px) {
     .header-logo {
-        width: 100%; /* Logo chiếm toàn bộ chiều rộng trên thiết bị nhỏ */
+        max-width: 100%;
     }
 
     .header-slogan {
-        font-size: 16px; /* Giảm kích thước font cho slogan */
-    }
-
-    .header-container {
-        flex-direction: column; /* Xếp các phần tử theo chiều dọc trên thiết bị nhỏ */
-        text-align: center; /* Căn chỉnh văn bản ở giữa */
+        font-size: 1rem; /* 16px equivalent */
+        text-align: center;
     }
 
     .info-wrapper {
-        flex-direction: column; /* Xếp chữ và hình ảnh theo chiều dọc */
+        flex-direction: column;
+        text-align: center;
     }
 
     .thumbnail-img {
-        width: 100%; /* Hình ảnh chiếm toàn bộ chiều rộng trên thiết bị di động */
+        max-width: 100%;
     }
 
     .chapter-title {
-        font-size: 20px; /* Giảm kích thước tiêu đề chương trên thiết bị nhỏ */
-    }
-
-    .footer {
-        font-size: 12px; /* Giảm kích thước font cho footer */
-    }
-
-    /* Tắt hiệu ứng zoom hình ảnh trên thiết bị di động */
-    .comic-image:hover {
-        transform: none;
+        font-size: 1.25rem; /* 20px equivalent */
     }
 }
 
-/* Màn hình nhỏ hơn 576px (thiết bị di động nhỏ hơn) */
 @media (max-width: 576px) {
     .header-slogan {
-        font-size: 14px; /* Giảm kích thước font cho slogan */
+        font-size: 0.875rem; /* 14px equivalent */
     }
 
     .chapter-title {
-        font-size: 18px; /* Giảm kích thước tiêu đề chương */
+        font-size: 1.125rem; /* 18px equivalent */
     }
 
-    /* Tối ưu hóa khoảng cách giữa các hình ảnh truyện */
     .comic-image {
         margin-bottom: 10px;
     }
