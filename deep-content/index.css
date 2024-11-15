@@ -1,82 +1,60 @@
-/*------------------------------------
-    Global Styles
-------------------------------------*/
+/* General styles */
 body {
-    font-family: sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
     color: #333;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/*------------------------------------
-    Header
-------------------------------------*/
 .header {
     text-align: center;
     padding: 20px 0;
 }
 
-.header-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
-
-.header-logo {
+.header-logo img {
+    width: 100%;
     max-width: 400px;
+    height: auto;
 }
 
 .header-slogan {
-    font-size: 1.125rem;
-    /* 18px equivalent */
+    font-size: 18px;
     font-weight: 700;
     color: #555;
-    text-align: left;
+    text-align: center;
 }
 
-/*------------------------------------
-    Comic Info Section
-------------------------------------*/
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .info-wrapper {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.thumbnail-img {
-    max-width: 300px;
-    border-radius: 8px;
 }
 
 .info-text {
-    flex: 1 1 50%;
-    /* Allows flexibility and wrapping */
+    flex-grow: 1;
 }
 
-/*------------------------------------
-    Chapter Content
-------------------------------------*/
-.chapter-content {
-    padding: 10px;
-    background-color: #f8f9fa;
+.dropdown-menu {
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
     border: 1px solid #ddd;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.chapter-title {
-    text-align: center;
-    font-size: 1.5rem;
-    /* 24px equivalent */
-    font-weight: bold;
-    margin: 20px 0 40px;
-    color: #333;
+.card-body {
+    padding: 20px;
 }
 
 .comic-image {
@@ -86,68 +64,103 @@ img {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    /* Smooth hover effect */
 }
 
 .comic-image:hover {
     transform: scale(1.02);
 }
 
-/*------------------------------------
-    Footer
-------------------------------------*/
+.chapter-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
 .footer {
     text-align: center;
     margin-top: 40px;
     padding: 20px;
     background-color: #f8f9fa;
-    font-size: 0.875rem;
-    /* 14px equivalent */
+    font-size: 14px;
     color: #555;
     border-top: 1px solid #ddd;
 }
 
-/*------------------------------------
-    Responsive Design
-------------------------------------*/
-@media (max-width: 739px) {
-    .header-logo {
-        max-width: 100%;
+/* Responsive Design */
+
+/* Màn hình nhỏ hơn 1200px (phần lớn các thiết bị di động) */
+@media (max-width: 1200px) {
+    .header-logo img {
+        width: 100%;
     }
 
     .header-slogan {
-        font-size: 1rem;
-        /* 16px equivalent */
+        font-size: 16px;
+    }
+
+    .header-container {
+        flex-direction: column;
         text-align: center;
     }
 
     .info-wrapper {
         flex-direction: column;
-        text-align: center;
     }
 
     .thumbnail-img {
-        max-width: 50%;
+        width: 100%;
+    }
+
+    .chapter-content {
+        padding: 10px;
+        max-width: 100%;
     }
 
     .chapter-title {
-        font-size: 1.25rem;
-        /* 20px equivalent */
+        font-size: 20px;
+    }
+
+    .footer {
+        font-size: 12px;
     }
 }
 
-@media (min-width: 740px) {
+/* Màn hình nhỏ hơn 768px (thiết bị di động) */
+@media (max-width: 768px) {
+    .header-logo img {
+        width: 100%;
+    }
+
     .header-slogan {
-        font-size: 0.875rem;
-        /* 14px equivalent */
+        font-size: 14px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-wrapper {
+        flex-direction: column;
+    }
+
+    .thumbnail-img {
+        width: 100%;
+    }
+
+    .chapter-content {
+        padding: 10px;
+        max-width: 100%;
     }
 
     .chapter-title {
-        font-size: 1.125rem;
-        /* 18px equivalent */
+        font-size: 18px;
     }
 
-    .comic-image {
-        margin-bottom: 10px;
+    .footer {
+        font-size: 12px;
     }
 }
