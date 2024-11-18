@@ -1,3 +1,7 @@
+body {
+    font-size: 16px;
+  }
+
 .header {
     text-align: center;
     padding: 20px 0;
@@ -265,27 +269,38 @@
     /* Dot được chọn */
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .slider-container {
-        height: 300px;
+    .header-container {
+      flex-direction: column;
+      align-items: center;
     }
-
-    .slider img {
-        width: 100%;
-        height: auto;
+    
+    .header-logo {
+      width: 100%;
+      max-width: 300px;
     }
-
-    .slider-btn {
-        padding: 8px 12px;
+    
+    .header-slogan {
+      text-align: center;
     }
-}
-
-@media (max-width: 480px) {
-    .slider-btn {
-        font-size: 16px;
+  }
+  
+  @media (max-width: 480px) {
+    .highlight {
+      font-size: 1.5rem;
     }
-}
+    
+    .name-commic {
+      font-size: 1.2rem;
+    }
+  }
 
 /* footer */
 .footer {
