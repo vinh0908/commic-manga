@@ -106,59 +106,15 @@ body {
     border-top: 1px solid #ddd;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 1200px) {
-    .header-container {
-        flex-direction: column;
-    }
-    
-    .info-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .card-body {
-        padding: 10px;
-    }
-    
-    .comic-image {
-        margin-bottom: 10px;
-    }
-}
-
 /* Tối ưu cho màn hình siêu nhỏ */
-@media screen and (max-width: 320px) {
-    .header {
-        padding: 10px 5px;
-    }
-    
-    .card {
-        margin: 5px;
-    }
-    
-    .card-body {
-        padding: 8px;
-    }
-}
-
-/* Hỗ trợ màn hình Retina */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (max-width: 768px) {
     .comic-image {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        width: 80%;
     }
-}
-
-/* Tối ưu cho thiết bị có notch */
-@supports (padding: max(0px)) {
-    .header {
-        padding-left: max(10px, env(safe-area-inset-left));
-        padding-right: max(10px, env(safe-area-inset-right));
+  }
+  
+  @media (max-width: 480px) {
+    .comic-image {
+        width: 80%;
     }
-    
-    .footer {
-        padding-bottom: max(15px, env(safe-area-inset-bottom));
-    }
-}
+  }
