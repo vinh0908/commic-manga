@@ -5,7 +5,7 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
 }
 
 .header {
@@ -73,15 +73,18 @@ body {
 
 .comic-image {
     width: 100%;
+    max-width: 100%; /* This is key to prevent overflowing */
     height: auto;
     margin-bottom: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block; /* Prevents potential whitespace issues */
     transition: transform 0.2s ease;
 }
 
-/* Tắt hiệu ứng hover trên thiết bị cảm ứng */
-@media (hover: hover) {
+
+/* Hover effect only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
     .comic-image:hover {
         transform: scale(1.02);
     }
@@ -105,16 +108,3 @@ body {
     color: #555;
     border-top: 1px solid #ddd;
 }
-
-/* Tối ưu cho màn hình siêu nhỏ */
-@media (max-width: 768px) {
-    .comic-image {
-        width: 80%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .comic-image {
-        width: 80%;
-    }
-  }
