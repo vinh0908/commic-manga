@@ -5,45 +5,58 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
+    -webkit-text-size-adjust: 100%;
 }
 
 .header {
     text-align: center;
-    padding: 20px 0;
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .header-logo img {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .header-slogan {
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
     font-weight: 700;
     color: #555;
     text-align: center;
+    padding: 10px;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     flex-wrap: wrap;
+    padding: 0 10px;
 }
 
 .info-wrapper {
     display: flex;
     align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .info-text {
     flex-grow: 1;
+    padding: 0 10px;
 }
 
 .dropdown-menu {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .card {
@@ -51,116 +64,101 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px;
 }
 
 .card-body {
-    padding: 20px;
+    padding: 15px;
 }
 
 .comic-image {
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
 }
 
-.comic-image:hover {
-    transform: scale(1.02);
+/* Tắt hiệu ứng hover trên thiết bị cảm ứng */
+@media (hover: hover) {
+    .comic-image:hover {
+        transform: scale(1.02);
+    }
 }
 
 .chapter-title {
     text-align: center;
-    font-size: 24px;
+    font-size: clamp(18px, 5vw, 24px);
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    margin: 15px 0 30px;
     color: #333;
+    padding: 0 10px;
 }
 
 .footer {
     text-align: center;
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 30px;
+    padding: 15px 10px;
     background-color: #f8f9fa;
-    font-size: 14px;
+    font-size: clamp(12px, 3.5vw, 14px);
     color: #555;
     border-top: 1px solid #ddd;
 }
 
 /* Responsive Design */
-
-/* Màn hình nhỏ hơn 1200px (phần lớn các thiết bị di động) */
-@media (max-width: 1200px) {
-    .header-logo img {
-        width: 100%;
-    }
-
-    .header-slogan {
-        font-size: 16px;
-    }
-
+@media screen and (max-width: 1200px) {
     .header-container {
         flex-direction: column;
-        text-align: center;
     }
-
+    
     .info-wrapper {
         flex-direction: column;
-    }
-
-    .thumbnail-img {
-        width: 100%;
-    }
-
-    .chapter-content {
-        padding: 10px;
-        max-width: 100%;
-    }
-
-    .chapter-title {
-        font-size: 20px;
-    }
-
-    .footer {
-        font-size: 12px;
+        text-align: center;
     }
 }
 
-/* Màn hình nhỏ hơn 768px (thiết bị di động) */
-@media (max-width: 768px) {
-    .header-logo img {
-        width: 100%;
-    }
-
-    .header-slogan {
-        font-size: 14px;
-    }
-
-    .header-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .info-wrapper {
-        flex-direction: column;
-    }
-
-    .thumbnail-img {
-        width: 100%;
-    }
-
-    .chapter-content {
+@media screen and (max-width: 768px) {
+    .card-body {
         padding: 10px;
-        max-width: 100%;
     }
-
-    .chapter-title {
-        font-size: 18px;
+    
+    .comic-image {
+        margin-bottom: 10px;
     }
+}
 
+/* Tối ưu cho màn hình siêu nhỏ */
+@media screen and (max-width: 320px) {
+    .header {
+        padding: 10px 5px;
+    }
+    
+    .card {
+        margin: 5px;
+    }
+    
+    .card-body {
+        padding: 8px;
+    }
+}
+
+/* Hỗ trợ màn hình Retina */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .comic-image {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Tối ưu cho thiết bị có notch */
+@supports (padding: max(0px)) {
+    .header {
+        padding-left: max(10px, env(safe-area-inset-left));
+        padding-right: max(10px, env(safe-area-inset-right));
+    }
+    
     .footer {
-        font-size: 12px;
+        padding-bottom: max(15px, env(safe-area-inset-bottom));
     }
 }
