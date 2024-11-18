@@ -5,7 +5,8 @@ body {
     padding: 0;
     background-color: #f9f9f9;
     color: #333;
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.6;
 }
 
 .header {
@@ -17,7 +18,7 @@ body {
 
 .header-logo img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px; /* Giảm kích thước tối đa để phù hợp hơn */
     height: auto;
     display: block;
     margin: 0 auto;
@@ -73,18 +74,16 @@ body {
 
 .comic-image {
     width: 100%;
-    max-width: 100%; /* This is key to prevent overflowing */
+    max-width: 300px; /* Giới hạn kích thước ảnh trên màn hình lớn */
     height: auto;
-    margin-bottom: 15px;
+    margin: 15px auto;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: block; /* Prevents potential whitespace issues */
     transition: transform 0.2s ease;
 }
 
-
-/* Hover effect only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* Tắt hiệu ứng hover trên thiết bị cảm ứng */
+@media (hover: hover) {
     .comic-image:hover {
         transform: scale(1.02);
     }
@@ -107,4 +106,31 @@ body {
     font-size: clamp(12px, 3.5vw, 14px);
     color: #555;
     border-top: 1px solid #ddd;
+}
+
+/* Tối ưu hóa cho thiết bị di động */
+@media (max-width: 768px) {
+    .comic-image {
+        width: 90%; /* Đảm bảo ảnh không chiếm quá nhiều không gian */
+        max-width: 250px; /* Giới hạn kích thước tối đa */
+    }
+    .header-logo img {
+        max-width: 200px; /* Giảm kích thước logo trên màn hình nhỏ */
+    }
+}
+
+@media (max-width: 480px) {
+    .comic-image {
+        width: 100%; /* Ảnh sử dụng toàn bộ chiều rộng màn hình */
+        max-width: 200px; /* Giới hạn kích thước tối đa để tránh quá lớn */
+    }
+    .header-slogan {
+        font-size: clamp(12px, 4vw, 16px); /* Giảm kích cỡ font trên màn hình nhỏ */
+    }
+    .chapter-title {
+        font-size: clamp(16px, 4.5vw, 20px); /* Điều chỉnh tiêu đề chương */
+    }
+    .footer {
+        font-size: clamp(11px, 4vw, 13px); /* Giảm kích thước chữ trong footer */
+    }
 }
