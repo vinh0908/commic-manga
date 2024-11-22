@@ -1,118 +1,233 @@
-/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
+    font-size: 16px;
 }
 
 .header {
     text-align: center;
-    padding: 15px 10px;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 20px 0;
 }
 
-.header-logo img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
+.header-logo {
+    width: 400px;
 }
 
 .header-slogan {
-    font-size: clamp(14px, 4vw, 18px);
+    font-size: 18px;
     font-weight: 700;
     color: #555;
-    text-align: center;
-    padding: 10px;
+    text-align: left;
+}
+
+.row.align-items-center {
+    gap: 10px;
+    /* Khoảng cách giữa logo và slogan */
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding: 0 10px;
+    gap: 20px;
+    /* Khoảng cách giữa logo và slogan */
 }
 
-.info-wrapper {
+.highlight {
+    font-family: "Mystery Quest", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 0;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.overlay-date,
+.overlay-icon {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent black background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Date overlay - top left corner */
+.overlay-date {
+    top: 10px;
+    left: 10px;
+}
+
+/* Heart icon overlay - top right corner */
+.overlay-icon {
+    top: 10px;
+    right: 10px;
+}
+
+.overlay-icon i {
+    color: red;
+    font-size: 20px;
+}
+
+.name-commic {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+    font-weight: 800;
+    text-decoration: none;
+    color: black;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-fluid {
+    max-width: 70%;
+    height: auto;
+}
+
+/* Overlay for Date */
+.overlay-date {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Overlay for Icon */
+.overlay-icon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.overlay-icon i {
+    color: black;
+    font-size: 20px;
+}
+
+/* Hover effect */
+.hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Background black */
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    /* Smooth transition */
 }
 
-.info-text {
-    flex-grow: 1;
-    padding: 0 10px;
+.hover-overlay h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
-.dropdown-menu {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+.hover-overlay p {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
 }
 
-.card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+/* Show overlay on hover */
+.image-container:hover .hover-overlay {
+    opacity: 1;
 }
 
-.card-body {
+.name-commic {
+    text-align: center;
+    font-size: 2rem;
+    padding: 10px 0;
+}
+
+.custom-col {
     padding: 15px;
 }
 
-.comic-image {
-    width: 100%;
-    max-width: 100%; /* This is key to prevent overflowing */
+.book-image {
+    max-width: 80%;
     height: auto;
     margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: block; /* Prevents potential whitespace issues */
-    transition: transform 0.2s ease;
 }
 
+.img-container {
+    position: relative;
+    width: 100%;
+}
 
-/* Hover effect only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-    .comic-image:hover {
-        transform: scale(1.02);
+.img-container img {
+    width: 100%;
+    transition: transform 0.3s ease;
+    /* Thêm hiệu ứng chuyển đổi */
+}
+
+.img-container:hover img {
+    transform: scale(1.1);
+    /* Phóng to hình ảnh khi hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-logo {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .header-slogan {
+        text-align: center;
     }
 }
 
-.chapter-title {
-    text-align: center;
-    font-size: clamp(18px, 5vw, 24px);
-    font-weight: bold;
-    margin: 15px 0 30px;
-    color: #333;
-    padding: 0 10px;
+@media (max-width: 480px) {
+    .highlight {
+        font-size: 1.5rem;
+    }
+
+    .name-commic {
+        font-size: 1.2rem;
+    }
 }
 
+
+/* footer */
 .footer {
     text-align: center;
-    margin-top: 30px;
-    padding: 15px 10px;
+    margin-top: 40px;
+    padding: 20px;
     background-color: #f8f9fa;
-    font-size: clamp(12px, 3.5vw, 14px);
+    font-size: 14px;
     color: #555;
     border-top: 1px solid #ddd;
 }
-
-
-/*  No need for separate max-width media queries for common mobile sizes.
-    The `max-width: 100%` on .comic-image, combined with adjustments made
-    earlier, should handle most situations.  If you encounter specific issues
-    on certain devices, then add device-specific queries. For example, for
-    Oppo Reno 12 F, inspect the rendered HTML to determine if there are
-    other elements affecting the layout.  */
