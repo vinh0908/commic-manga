@@ -173,11 +173,12 @@ body {
 }
 
 .book-image {
-    max-width: 70%;
+    width: 80%;
     height: auto;
-    margin-bottom: 15px;
-    display: block;
+    max-width: 100%;
     object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .img-container {
@@ -211,10 +212,6 @@ body {
     .header-slogan {
         text-align: center;
     }
-
-    .book-image {
-        max-width: 40%;
-    }
 }
 
 @media (max-width: 480px) {
@@ -225,9 +222,24 @@ body {
     .name-commic {
         font-size: 1.2rem;
     }
+}
 
+/* Media Queries cho các kích thước màn hình khác nhau */
+@media screen and (max-width: 768px) {
     .book-image {
-        max-width: 40%;
+        max-height: 400px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .book-image {
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .book-image {
+        max-height: 250px;
     }
 }
 
