@@ -28,13 +28,6 @@
       .header-slogan {
         text-align: center;
       }
-
-      .book-image {
-        float: left;
-        /* Cho hình ảnh nổi bên trái */
-        margin-right: 10px;
-        /* Thêm khoảng cách bên phải */
-      }
     }
 
     @media (max-width: 480px) {
@@ -48,7 +41,8 @@
 
       .book-image {
         width: 100%;
-        /* Ẩn hình ảnh trên màn hình rất nhỏ */
+        height: auto;
+        object-fit: cover;
       }
     }
   </style>
