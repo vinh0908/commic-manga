@@ -197,7 +197,7 @@ body {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .header-container {
         flex-direction: column;
         align-items: center;
@@ -221,7 +221,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .highlight {
         font-size: 1.5rem;
     }
