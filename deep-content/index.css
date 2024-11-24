@@ -214,9 +214,6 @@ body {
 
     .book-image {
         max-width: 40%;
-        height: auto;
-        display: block;
-        object-fit: cover;
     }
 }
 
@@ -231,9 +228,6 @@ body {
 
     .book-image {
         max-width: 40%;
-        height: auto;
-        display: block;
-        object-fit: cover;
     }
 }
 
