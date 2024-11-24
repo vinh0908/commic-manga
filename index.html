@@ -15,6 +15,20 @@
     }
 
     @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header-logo {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .header-slogan {
+        text-align: center;
+      }
+
       .book-image {
         float: left;
         /* Cho hình ảnh nổi bên trái */
@@ -24,8 +38,16 @@
     }
 
     @media (max-width: 480px) {
+      .highlight {
+        font-size: 1.5rem;
+      }
+
+      .name-commic {
+        font-size: 1.2rem;
+      }
+
       .book-image {
-        width: 80%;
+        width: 100%;
         /* Ẩn hình ảnh trên màn hình rất nhỏ */
       }
     }
