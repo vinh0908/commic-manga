@@ -173,12 +173,12 @@ body {
 }
 
 .book-image {
-    width: 80%;
+    width: 100%;
     height: auto;
     max-width: 100%;
     display: block;
     object-fit: cover;
-  }
+}
 
 .img-container {
     position: relative;
@@ -220,6 +220,15 @@ body {
 
     .name-commic {
         font-size: 1.2rem;
+    }
+}
+
+/* Media query cho màn hình nhỏ, bao gồm các kích thước gập của Samsung Z Flip */
+@media screen and (max-width: 720px) {
+    .book-image {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }
 
